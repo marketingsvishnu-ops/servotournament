@@ -1,345 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AllPanel 7 ID</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+    <title>CHAIBAT - Gully Cricket Tournament 2026</title>
 
-body{
-    background:#042b23;
-    color:#fff;
-    overflow-x:auto;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-.container{
-    display:flex;
-    min-height:100vh;
-}
+        body {
+            background: #f4f6f8;
+            color: #222;
+        }
 
-.demo{
-    width:70%;
-    background:#111;
-}
+        header {
+            background: linear-gradient(135deg, #111827, #dc2626);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
 
-iframe{
-    width:100%;
-    height:100vh;
-    border:none;
-}
+        header h1 {
+            font-size: 48px;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+        }
 
-.right{
-    width:30%;
-    padding:30px 22px;
-    background:linear-gradient(180deg,#008f73,#043d33);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+        header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
 
-.box{
-    width:100%;
-    background:#07110f;
-    border:1px solid #00e8ad;
-    border-radius:22px;
-    padding:24px 18px;
-    text-align:center;
-    box-shadow:0 0 30px rgba(0,232,173,.35);
-}
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
 
-.badge{
-    display:inline-block;
-    background:#00e8ad;
-    color:#001f18;
-    padding:10px 22px;
-    border-radius:30px;
-    font-weight:bold;
-    margin-bottom:16px;
-}
+        .section-title {
+            text-align: center;
+            margin: 35px 0 20px;
+            font-size: 28px;
+        }
 
-h1{
-    color:#00e8ad;
-    font-size:30px;
-    text-transform:uppercase;
-    margin-bottom:12px;
-}
+        .teams {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
 
-.sub{
-    color:#ddd;
-    line-height:1.6;
-    margin-bottom:18px;
-    font-size:16px;
-}
+        .team {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            font-weight: bold;
+            transition: 0.2s;
+        }
 
-.process{
-    text-align:left;
-    background:linear-gradient(180deg,#07110f,#06483b);
-    border:1px solid #00e8ad;
-    border-radius:16px;
-    padding:18px;
-    margin:18px 0;
-}
+        .team:hover {
+            transform: translateY(-4px);
+        }
 
-.process h2{
-    color:#00e8ad;
-    font-size:20px;
-    margin-bottom:12px;
-    text-align:center;
-}
+        .schedule {
+            display: grid;
+            gap: 15px;
+        }
 
-.process h3{
-    color:#fff;
-    font-size:18px;
-    margin:16px 0 8px;
-}
+        .match {
+            background: white;
+            border-left: 5px solid #dc2626;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+        }
 
-.process p,
-.process li{
-    color:#ddd;
-    font-size:15px;
-    line-height:1.6;
-}
+        .match.final {
+            background: linear-gradient(135deg, #fef3c7, #fff);
+            border-left-color: #f59e0b;
+        }
 
-.process ol{
-    padding-left:20px;
-}
+        .match h3 {
+            color: #dc2626;
+            margin-bottom: 8px;
+        }
 
-.manual-whatsapp,
-.signup{
-    display:block;
-    background:#00e8ad;
-    color:#001f18;
-    text-decoration:none;
-    padding:15px;
-    border-radius:14px;
-    font-size:20px;
-    font-weight:bold;
-    text-align:center;
-    box-shadow:0 0 18px rgba(0,232,173,.4);
-}
+        .match.final h3 {
+            color: #b45309;
+        }
 
-.manual-whatsapp{
-    margin:14px 0 8px;
-}
+        .date {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
 
-.signup{
-    margin-top:16px;
-}
+        .teams-match {
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-.manual-whatsapp:hover,
-.signup:hover{
-    background:#00c996;
-}
+        footer {
+            margin-top: 50px;
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
 
-.features{
-    display:grid;
-    gap:12px;
-    margin:22px 0 18px;
-}
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 36px;
+            }
 
-.feature{
-    background:linear-gradient(90deg,#092a24,#06483b);
-    border:1px solid #00e8ad;
-    border-radius:14px;
-    padding:14px;
-    font-size:17px;
-    font-weight:bold;
-}
+            header p {
+                font-size: 15px;
+            }
 
-.feature span{
-    color:#00e8ad;
-}
-
-.website-row{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    margin-top:18px;
-    font-weight:bold;
-    flex-wrap:wrap;
-}
-
-.website-row a{
-    text-decoration:none;
-    word-break:break-word;
-}
-
-.website,
-.whatsapp-small{
-    color:#00e8ad;
-}
-
-.trust{
-    margin-top:18px;
-    color:#ccc;
-    line-height:1.7;
-}
-
-.footer{
-    margin-top:20px;
-    color:#888;
-    font-size:12px;
-}
-
-/* MOBILE — Laptop jaisa same layout */
-@media(max-width:768px){
-
-    body{
-        overflow-x:auto;
-    }
-
-    .container{
-        width:1200px;
-        min-width:1200px;
-        flex-direction:row;
-    }
-
-    .demo{
-        width:70%;
-    }
-
-    .right{
-        width:30%;
-        padding:25px 18px;
-    }
-
-    iframe{
-        height:100vh;
-        min-height:700px;
-    }
-
-    h1{
-        font-size:28px;
-    }
-
-    .manual-whatsapp,
-    .signup{
-        font-size:19px;
-    }
-}
-</style>
+            .section-title {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+<header>
+    <h1>🏏 CHAIBAT</h1>
+    <p>Gully Cricket Tournament 2026</p>
+    <p>20 September 2026 - 20 October 2026</p>
+</header>
+
 <div class="container">
 
-    <div class="demo">
-        <iframe src="https://www.allpanel7.com/?code=MAHA1991"></iframe>
+    <h2 class="section-title">🏆 Participating Teams</h2>
+
+    <div class="teams">
+        <div class="team">1. Gully Gladiators</div>
+        <div class="team">2. Street Strikers</div>
+        <div class="team">3. Gully Kings</div>
+        <div class="team">4. Desi Destroyers</div>
+        <div class="team">5. Gully Warriors</div>
+        <div class="team">6. Batting Baaz</div>
+        <div class="team">7. Sixer Squad</div>
+        <div class="team">8. Street Legends</div>
+        <div class="team">9. Gully Gang</div>
+        <div class="team">10. Power Hitters</div>
     </div>
 
-    <div class="right">
+    <h2 class="section-title">📅 Match Schedule</h2>
 
-        <div class="box">
+    <div class="schedule">
 
-            <div class="badge">ALLPANEL7</div>
-
-            <h1>Get Your AllPanel7 ID</h1>
-
-            <p class="sub">
-                Choose the registration method that's most convenient for you and get started with AllPanel 7 today!
-            </p>
-
-            <div class="process">
-
-                <h2>Get Your AllPanel 7 ID – Your Choice!</h2>
-
-                <h3>✅ Manual ID</h3>
-
-                <p>
-                    Click the <strong>"WhatsApp Now"</strong> button and our team will create your ID for you.
-                </p>
-
-                <a class="manual-whatsapp"
-                   href="https://wa.me/+917980303785?text=Hello%20I%20want%20new%20manual%20ID"
-                   target="_blank">
-                    📲 WhatsApp Now
-                </a>
-
-                <h3>✅ Self-Registration</h3>
-
-                <p>
-                    Click the <strong>"Sign Up"</strong> button and follow these simple steps:
-                </p>
-
-                <ol>
-                    <li>Enter your mobile number.</li>
-                    <li>Create your username.</li>
-                    <li>Create your password and confirm it.</li>
-                    <li>The Signup Code is pre-filled as <strong>MAHA1991</strong>.</li>
-                    <li>Click <strong>"Sign Up"</strong> to complete your registration.</li>
-                </ol>
-
-                <a class="signup"
-                   href="https://www.allpanel7.com/?code=MAHA1991"
-                   target="_blank">
-                    📝 Sign Up
-                </a>
-
+        <div class="match">
+            <h3>Match 1</h3>
+            <div class="date">20 September 2026</div>
+            <div class="teams-match">
+                Gully Gladiators 🆚 Street Strikers
             </div>
+        </div>
 
-            <div class="features">
-
-                <div class="feature">
-                    Minimum Deposit:
-                    <span>₹100 Only</span>
-                </div>
-
-                <div class="feature">
-                    Welcome Bonus:
-                    <span>10%</span>
-                </div>
-
-                <div class="feature">
-                    Auto and Manual Service:
-                    <span>Available</span>
-                </div>
-
-                <div class="feature">
-                    Quick Help:
-                    <span>24/7 Support Available</span>
-                </div>
-
+        <div class="match">
+            <h3>Match 2</h3>
+            <div class="date">21 September 2026</div>
+            <div class="teams-match">
+                Gully Kings 🆚 Desi Destroyers
             </div>
+        </div>
 
-            <div class="website-row">
-
-                <a class="website"
-                   href="https://www.allpanel7.com/?code=MAHA1991"
-                   target="_blank">
-                    🌐 www.allpanel7.com/?code=MAHA1991
-                </a>
-
-                <a class="whatsapp-small"
-                   href="https://wa.me/+917980303785"
-                   target="_blank">
-                    💬 WhatsApp
-                </a>
-
+        <div class="match">
+            <h3>Match 3</h3>
+            <div class="date">22 September 2026</div>
+            <div class="teams-match">
+                Gully Warriors 🆚 Batting Baaz
             </div>
+        </div>
 
-            <div class="trust">
-                ✅ Trusted Manual Support<br>
-                ✅ Simple Process<br>
-                ✅ Fast Response
+        <div class="match">
+            <h3>Match 4</h3>
+            <div class="date">23 September 2026</div>
+            <div class="teams-match">
+                Sixer Squad 🆚 Street Legends
             </div>
+        </div>
 
-            <div class="footer">
-                18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+        <div class="match">
+            <h3>Match 5</h3>
+            <div class="date">24 September 2026</div>
+            <div class="teams-match">
+                Gully Gang 🆚 Power Hitters
             </div>
+        </div>
 
+        <div class="match">
+            <h3>🥇 Semi-Final 1</h3>
+            <div class="date">27 September 2026</div>
+            <div class="teams-match">
+                Winner Match 1 🆚 Winner Match 2
+            </div>
+        </div>
+
+        <div class="match">
+            <h3>🥈 Semi-Final 2</h3>
+            <div class="date">28 September 2026</div>
+            <div class="teams-match">
+                Winner Match 3 🆚 Winner Match 4
+            </div>
+        </div>
+
+        <div class="match">
+            <h3>🔥 Qualifier</h3>
+            <div class="date">30 September 2026</div>
+            <div class="teams-match">
+                Winner Match 5 🆚 Best Performing Losing Team
+            </div>
+        </div>
+
+        <div class="match final">
+            <h3>🏆 GRAND FINAL</h3>
+            <div class="date">20 October 2026</div>
+            <div class="teams-match">
+                🏏 FINALISTS 🆚 FINALISTS 🏏
+            </div>
         </div>
 
     </div>
 
 </div>
+
+<footer>
+    <p>🏏 CHAIBAT © 2026</p>
+    <p>Gully Cricket • Big Dreams • Bigger Sixes</p>
+</footer>
 
 </body>
 </html>
