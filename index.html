@@ -1,366 +1,357 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo</title>
 
-    <title>CHAIBAT | Gully Cricket 2026</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+body{
+  background:#0f1020;
+  color:white;
+}
 
-        body {
-            background: #f4f4f4;
-            color: #222;
-        }
+.container{
+  display:flex;
+  flex-direction:row-reverse;
+  min-height:100vh;
+}
 
-        /* HERO */
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            color: white;
-            background:
-                linear-gradient(rgba(0,0,0,.65), rgba(120,0,0,.75)),
-                url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1600&q=80")
-                center/cover;
-        }
+.demo{
+  width:70%;
+  background:#111;
+  position:relative;
+}
 
-        .hero-content {
-            max-width: 800px;
-        }
+iframe{
+  width:100%;
+  height:100vh;
+  border:none;
+}
 
-        .logo {
-            font-size: 60px;
-            font-weight: 900;
-            letter-spacing: 7px;
-            margin-bottom: 15px;
-        }
+.right{
+  width:30%;
+  padding:30px 22px;
+  background:linear-gradient(180deg,#181a35,#0b0c18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-y:auto;
+}
 
-        .hero h2 {
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
+.box{
+  width:100%;
+  background:rgba(10,10,10,.88);
+  border:1px solid #ffd86b;
+  border-radius:22px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(212,175,55,.28);
+}
 
-        .hero p {
-            font-size: 20px;
-            line-height: 1.6;
-        }
+.badge{
+  display:inline-block;
+  background:#ffd86b;
+  color:#111;
+  padding:8px 18px;
+  border-radius:30px;
+  font-weight:800;
+  margin-bottom:16px;
+}
 
-        .invite {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 30px;
-            background: #facc15;
-            color: #111;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 18px;
-        }
+h1{
+  font-size:34px;
+  color:#ffd86b;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
 
-        /* CONTAINER */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+.sub{
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:22px;
+  color:#eee;
+}
 
-        .title {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 25px;
-        }
+.features{
+  display:grid;
+  gap:12px;
+  margin:22px 0;
+}
 
-        /* TEAMS */
-        .teams {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
+.feature{
+  background:linear-gradient(90deg,#1b1b1b,#2b2208);
+  border:1px solid rgba(212,175,55,.55);
+  padding:14px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:700;
+}
 
-        .team {
-            background: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 12px;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,.08);
-        }
+.feature span{
+  color:#ffd86b;
+}
 
-        /* MATCHES */
-        .matches {
-            display: grid;
-            gap: 15px;
-        }
+/* Signup Button */
+.signup-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 16px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:800;
+  border:1px solid #1ebe5d;
+  transition:.3s;
+}
 
-        .match {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 5px solid #dc2626;
-            box-shadow: 0 5px 15px rgba(0,0,0,.08);
-        }
+.signup-btn:hover{
+  background:#1ebe5d;
+  transform:scale(1.03);
+}
 
-        .match h3 {
-            color: #dc2626;
-            margin-bottom: 8px;
-        }
+.website-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:bold;
+}
 
-        .date {
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+.website-row a{
+  text-decoration:none;
+}
 
-        .teams-match {
-            font-size: 18px;
-            font-weight: bold;
-        }
+.website{
+  color:#25D366;
+}
 
-        .final {
-            background: linear-gradient(135deg, #fff7cc, #fff);
-            border-left-color: #f59e0b;
-        }
+.whatsapp-small{
+  color:#ffd86b;
+}
 
-        .final h3 {
-            color: #b45309;
-        }
+.cta{
+  display:block;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:17px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  margin-top:22px;
+  box-shadow:0 8px 18px rgba(37,211,102,.35);
+  transition:.3s;
+}
 
-        /* INVITATION */
-        .invitation {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 55px 20px;
-            margin-top: 30px;
-        }
+.cta:hover{
+  transform:scale(1.03);
+  background:#1ebe5d;
+}
 
-        .invitation h2 {
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
+/* Floating Signup Button */
+.floating-signup{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:50;
+  background:#ffd86b;
+  color:#111;
+  padding:12px 24px;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:900;
+  border:3px solid #fff;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(212,175,55,0.6);
+  transition:.3s;
+  text-decoration:none;
+  display:inline-block;
+}
 
-        .invitation p {
-            font-size: 18px;
-            line-height: 1.7;
-            max-width: 700px;
-            margin: auto;
-        }
+.floating-signup:hover{
+  transform:translateX(-50%) scale(1.08);
+  background:#ffb300;
+  box-shadow:0 12px 25px rgba(212,175,55,0.8);
+}
 
-        .cta {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 15px 35px;
-            background: #dc2626;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-        }
+.trust{
+  margin-top:16px;
+  color:#ccc;
+  font-size:14px;
+  line-height:1.5;
+}
 
-        /* FOOTER */
-        footer {
-            background: #000;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#aaa;
+  line-height:1.5;
+}
 
-        @media(max-width: 600px) {
-            .logo {
-                font-size: 42px;
-            }
+@media(max-width:768px){
+  .container{
+    flex-direction:column-reverse;
+  }
 
-            .hero h2 {
-                font-size: 28px;
-            }
+  .demo,
+  .right{
+    width:100%;
+  }
 
-            .hero p {
-                font-size: 16px;
-            }
+  iframe{
+    height:500px;
+  }
 
-            .title {
-                font-size: 25px;
-            }
-        }
-    </style>
+  .right{
+    padding:20px;
+  }
+}
+
+@media(max-width:480px){
+  h1{
+    font-size:28px;
+  }
+
+  .sub{
+    font-size:16px;
+  }
+
+  .feature{
+    font-size:16px;
+    padding:12px;
+  }
+
+  .signup-btn{
+    font-size:14px;
+    padding:8px 13px;
+  }
+
+  .cta{
+    font-size:18px;
+    padding:15px;
+  }
+
+  .website-row{
+    flex-direction:column;
+    gap:8px;
+  }
+}
+</style>
+
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="logo">🏏 CHAIBAT</div>
-
-        <h2>You're Invited!</h2>
-
-        <p>
-            Come and watch the excitement, passion and big sixes
-            of our <strong>Gully Cricket Tournament 2026!</strong>
-        </p>
-
-        <p>
-            📅 20 September 2026 – 20 October 2026
-        </p>
-
-        <div class="invite">
-            🎉 COME WATCH • CHEER • ENJOY 🎉
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- TEAMS -->
 <div class="container">
 
-    <h2 class="title">🏆 Meet the Gully Cricket Teams</h2>
+  <div class="demo">
+    <a href="https://www.chaibet.com/?code=ice0000" target="_blank" rel="noopener noreferrer" class="floating-signup">🔥 CLICK ON SIGNUP 🔥</a>
+    <iframe src="https://www.chaibet.com/?code=ice0000"></iframe>
+  </div>
 
-    <div class="teams">
+  <div class="right">
+    <div class="box">
 
-        <div class="team">🔥 Gully Gladiators</div>
-        <div class="team">⚡ Street Strikers</div>
-        <div class="team">👑 Gully Kings</div>
-        <div class="team">💥 Desi Destroyers</div>
-        <div class="team">🏏 Gully Warriors</div>
-        <div class="team">🦅 Batting Baaz</div>
-        <div class="team">🚀 Sixer Squad</div>
-        <div class="team">⭐ Street Legends</div>
-        <div class="team">🔥 Gully Gang</div>
-        <div class="team">💪 Power Hitters</div>
+```
+  <div class="badge">AUTO WEBSITE</div>
 
+  <h1>Get Your ID Now</h1>
+
+  <p class="sub">
+    Fast auto website service with easy deposit support.
+    New users can start quickly through WhatsApp.
+  </p>
+
+  <div class="features">www.chaibet.com
+
+    <div class="feature">
+      Minimum Deposit: <span>₹100 Only</span>
     </div>
 
-</div>
-
-
-<!-- MATCH SCHEDULE -->
-<div class="container">
-
-    <h2 class="title">📅 Match Schedule</h2>
-
-    <div class="matches">
-
-        <div class="match">
-            <h3>Match 1</h3>
-            <div class="date">20 September 2026</div>
-            <div class="teams-match">
-                Gully Gladiators 🆚 Street Strikers
-            </div>
-        </div>
-
-        <div class="match">
-            <h3>Match 2</h3>
-            <div class="date">21 September 2026</div>
-            <div class="teams-match">
-                Gully Kings 🆚 Desi Destroyers
-            </div>
-        </div>
-
-        <div class="match">
-            <h3>Match 3</h3>
-            <div class="date">22 September 2026</div>
-            <div class="teams-match">
-                Gully Warriors 🆚 Batting Baaz
-            </div>
-        </div>
-
-        <div class="match">
-            <h3>Match 4</h3>
-            <div class="date">23 September 2026</div>
-            <div class="teams-match">
-                Sixer Squad 🆚 Street Legends
-            </div>
-        </div>
-
-        <div class="match">
-            <h3>Match 5</h3>
-            <div class="date">24 September 2026</div>
-            <div class="teams-match">
-                Gully Gang 🆚 Power Hitters
-            </div>
-        </div>
-
-        <div class="match">
-            <h3>🥇 Semi-Final 1</h3>
-            <div class="date">27 September 2026</div>
-            <div class="teams-match">
-                Winner Match 1 🆚 Winner Match 2
-            </div>
-        </div>
-
-        <div class="match">
-            <h3>🥈 Semi-Final 2</h3>
-            <div class="date">28 September 2026</div>
-            <div class="teams-match">
-                Winner Match 3 🆚 Winner Match 4
-            </div>
-        </div>
-
-        <div class="match">
-            <h3>🔥 Qualifier</h3>
-            <div class="date">30 September 2026</div>
-            <div class="teams-match">
-                Winner Match 5 🆚 Best Performing Losing Team
-            </div>
-        </div>
-
-        <div class="match final">
-            <h3>🏆 GRAND FINAL</h3>
-            <div class="date">20 October 2026</div>
-            <div class="teams-match">
-                🏏 FINALISTS 🆚 FINALISTS 🏏
-            </div>
-        </div>
-
+    <div class="feature">
+      Welcome Bonus: <span>10%</span>
     </div>
 
-</div>
+    <div class="feature">
+      Auto Website Support:
+      <a
+        class="signup-btn"
+        href="https://www.chaibet.com/?code=ice0000"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Click on Signup
+      </a>
+    </div>
 
+    <div class="feature">
+      Quick Help:
+      <span>Deposit &amp; Withdrawal Support</span>
+    </div>
 
-<!-- INVITATION -->
-<section class="invitation">
+  </div>
 
-    <h2>🎉 Come Be Part of the Action!</h2>
+  <div class="website-row">
 
-    <p>
-        Bring your friends, family and cricket spirit!
-        Watch the players battle it out in the ultimate
-        <strong>CHAIBAT Gully Cricket Tournament.</strong>
-        Cheer for your favourite team and enjoy an unforgettable
-        day of cricket, fun and entertainment.
-    </p>
-
-    <a href="#" class="cta">
-        🏏 JOIN US & WATCH THE MATCH
+    <a
+      class="website"
+      href="https://www.chaibet.com/?code=ice0000"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🌐 www.chaibet.com
     </a>
 
-</section>
+    <a
+      class="whatsapp-small"
+      href="https://wa.me/447522076389"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 WhatsApp
+    </a>
 
+  </div>
 
-<!-- FOOTER -->
-<footer>
+  <a
+    class="cta"
+    href="https://wa.me/447522076389?text=Hello%20I%20want%20new%20manual%20ID"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📲 WhatsApp Now
+  </a>
 
-    <p>🏏 <strong>CHAIBAT</strong> Gully Cricket Tournament 2026</p>
+  <p class="trust">
+    ✅ Trusted Manual Support<br>
+    ✅ Simple Process<br>
+    ✅ Fast Response
+  </p>
 
-    <p>
-        Come for the cricket. Stay for the excitement! 🔥
-    </p>
+  <div class="footer">
+    18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+  </div>
 
-</footer>
+</div>
+```
+
+  </div>
+
+</div>
 
 </body>
 </html>
-```
