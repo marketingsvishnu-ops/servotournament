@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CHAIBAT - Gully Cricket Tournament 2026</title>
+    <title>CHAIBAT | Gully Cricket 2026</title>
 
     <style>
         * {
@@ -15,85 +16,103 @@
         }
 
         body {
-            background: #f4f6f8;
+            background: #f4f4f4;
             color: #222;
         }
 
-        header {
-            background: linear-gradient(135deg, #111827, #dc2626);
-            color: white;
+        /* HERO */
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 45px 20px;
+            padding: 40px 20px;
+            color: white;
+            background:
+                linear-gradient(rgba(0,0,0,.65), rgba(120,0,0,.75)),
+                url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
         }
 
-        header h1 {
-            font-size: 48px;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
+        .hero-content {
+            max-width: 800px;
         }
 
-        header p {
+        .logo {
+            font-size: 60px;
+            font-weight: 900;
+            letter-spacing: 7px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .invite {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            background: #facc15;
+            color: #111;
+            border-radius: 30px;
+            font-weight: bold;
             font-size: 18px;
-            opacity: 0.9;
         }
 
+        /* CONTAINER */
         .container {
             max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 15px;
+            margin: auto;
+            padding: 40px 20px;
         }
 
-        .section-title {
+        .title {
             text-align: center;
-            margin: 35px 0 20px;
-            font-size: 28px;
+            font-size: 30px;
+            margin-bottom: 25px;
         }
 
+        /* TEAMS */
         .teams {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
         }
 
         .team {
             background: white;
             padding: 20px;
-            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 12px;
             font-weight: bold;
-            transition: 0.2s;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
         }
 
-        .team:hover {
-            transform: translateY(-4px);
-        }
-
-        .schedule {
+        /* MATCHES */
+        .matches {
             display: grid;
             gap: 15px;
         }
 
         .match {
             background: white;
-            border-left: 5px solid #dc2626;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-        }
-
-        .match.final {
-            background: linear-gradient(135deg, #fef3c7, #fff);
-            border-left-color: #f59e0b;
+            border-radius: 12px;
+            border-left: 5px solid #dc2626;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
         }
 
         .match h3 {
             color: #dc2626;
             margin-bottom: 8px;
-        }
-
-        .match.final h3 {
-            color: #b45309;
         }
 
         .date {
@@ -106,25 +125,70 @@
             font-weight: bold;
         }
 
-        footer {
-            margin-top: 50px;
+        .final {
+            background: linear-gradient(135deg, #fff7cc, #fff);
+            border-left-color: #f59e0b;
+        }
+
+        .final h3 {
+            color: #b45309;
+        }
+
+        /* INVITATION */
+        .invitation {
             background: #111827;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+            margin-top: 30px;
+        }
+
+        .invitation h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .invitation p {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 35px;
+            background: #dc2626;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
             color: white;
             text-align: center;
             padding: 25px;
         }
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 36px;
+        @media(max-width: 600px) {
+            .logo {
+                font-size: 42px;
             }
 
-            header p {
-                font-size: 15px;
+            .hero h2 {
+                font-size: 28px;
             }
 
-            .section-title {
-                font-size: 24px;
+            .hero p {
+                font-size: 16px;
+            }
+
+            .title {
+                font-size: 25px;
             }
         }
     </style>
@@ -132,32 +196,62 @@
 
 <body>
 
-<header>
-    <h1>🏏 CHAIBAT</h1>
-    <p>Gully Cricket Tournament 2026</p>
-    <p>20 September 2026 - 20 October 2026</p>
-</header>
+<!-- HERO -->
+<section class="hero">
 
-<div class="container">
+    <div class="hero-content">
 
-    <h2 class="section-title">🏆 Participating Teams</h2>
+        <div class="logo">🏏 CHAIBAT</div>
 
-    <div class="teams">
-        <div class="team">1. Gully Gladiators</div>
-        <div class="team">2. Street Strikers</div>
-        <div class="team">3. Gully Kings</div>
-        <div class="team">4. Desi Destroyers</div>
-        <div class="team">5. Gully Warriors</div>
-        <div class="team">6. Batting Baaz</div>
-        <div class="team">7. Sixer Squad</div>
-        <div class="team">8. Street Legends</div>
-        <div class="team">9. Gully Gang</div>
-        <div class="team">10. Power Hitters</div>
+        <h2>You're Invited!</h2>
+
+        <p>
+            Come and watch the excitement, passion and big sixes
+            of our <strong>Gully Cricket Tournament 2026!</strong>
+        </p>
+
+        <p>
+            📅 20 September 2026 – 20 October 2026
+        </p>
+
+        <div class="invite">
+            🎉 COME WATCH • CHEER • ENJOY 🎉
+        </div>
+
     </div>
 
-    <h2 class="section-title">📅 Match Schedule</h2>
+</section>
 
-    <div class="schedule">
+
+<!-- TEAMS -->
+<div class="container">
+
+    <h2 class="title">🏆 Meet the Gully Cricket Teams</h2>
+
+    <div class="teams">
+
+        <div class="team">🔥 Gully Gladiators</div>
+        <div class="team">⚡ Street Strikers</div>
+        <div class="team">👑 Gully Kings</div>
+        <div class="team">💥 Desi Destroyers</div>
+        <div class="team">🏏 Gully Warriors</div>
+        <div class="team">🦅 Batting Baaz</div>
+        <div class="team">🚀 Sixer Squad</div>
+        <div class="team">⭐ Street Legends</div>
+        <div class="team">🔥 Gully Gang</div>
+        <div class="team">💪 Power Hitters</div>
+
+    </div>
+
+</div>
+
+
+<!-- MATCH SCHEDULE -->
+<div class="container">
+
+    <h2 class="title">📅 Match Schedule</h2>
+
+    <div class="matches">
 
         <div class="match">
             <h3>Match 1</h3>
@@ -235,10 +329,38 @@
 
 </div>
 
+
+<!-- INVITATION -->
+<section class="invitation">
+
+    <h2>🎉 Come Be Part of the Action!</h2>
+
+    <p>
+        Bring your friends, family and cricket spirit!
+        Watch the players battle it out in the ultimate
+        <strong>CHAIBAT Gully Cricket Tournament.</strong>
+        Cheer for your favourite team and enjoy an unforgettable
+        day of cricket, fun and entertainment.
+    </p>
+
+    <a href="#" class="cta">
+        🏏 JOIN US & WATCH THE MATCH
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
 <footer>
-    <p>🏏 CHAIBAT © 2026</p>
-    <p>Gully Cricket • Big Dreams • Bigger Sixes</p>
+
+    <p>🏏 <strong>CHAIBAT</strong> Gully Cricket Tournament 2026</p>
+
+    <p>
+        Come for the cricket. Stay for the excitement! 🔥
+    </p>
+
 </footer>
 
 </body>
 </html>
+```
